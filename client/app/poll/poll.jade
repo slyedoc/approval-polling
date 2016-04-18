@@ -1,0 +1,23 @@
+.container
+  .row
+    .col-lg-12
+      h1.page-header Polls:
+
+      pre {{ $ctrl.polls | json }}
+      ul.nav.nav-tabs.nav-stacked.col-md-4.col-lg-4.col-sm-6(ng-repeat='poll in $ctrl.polls')
+        li
+          a(href='#', uib-tooltip='{{thing.info}}')
+            | {{thing.name}}
+            button.close(type='button', ng-click='$ctrl.deleteThing(thing)') &times;
+
+  form.poll-form
+    .form-group
+      label Add new Poll
+      input.form-control(type='text', placeholder='Poll Question', ng-model='$ctrl.newPoll.name')
+
+    .form-group( ng-repeat="o in $ctrl.newPoll.options")
+      input.form-control(type='text', placeholder='Choice {{ $index }}', ng-model='o.name')
+    .form-group
+      button.btn.btn-primary(ng-click="$ctrl.newPoll.options.push({name: ''})") Add New Choice
+    .form-group
+       button.btn.btn-primary(type='submit', ng-click='$ctrl.addPoll()') Add New Poll

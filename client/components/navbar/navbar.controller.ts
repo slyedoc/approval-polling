@@ -5,9 +5,15 @@ class NavbarController {
   menu = [{
     'title': 'Home',
     'state': 'main'
+  },{
+    'title': 'Polls',
+    'state': 'poll'
   }];
 
   isCollapsed = true;
+  private isLoggedIn;
+  private isAdmin;
+  private getCurrentUser;
   //end-non-standard
 
   constructor(Auth) {

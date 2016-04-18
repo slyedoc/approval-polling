@@ -10,7 +10,7 @@ angular.module('approvalPollingApp')
       path: '/socket.io-client'
     });
 
-    var socket = socketFactory({ ioSocket });
+    var socket = socketFactory({ ioSocket: ioSocket });
 
     return {
       socket,

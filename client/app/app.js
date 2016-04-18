@@ -11,7 +11,7 @@ angular.module('approvalPollingApp', [
   'ui.bootstrap',
   'validation.match'
 ])
-  .config(function(, $locationProvider) {
+  .config(function($locationProvider) {
 
     $locationProvider.html5Mode(true);
   });
