@@ -78,6 +78,7 @@ UserSchema
 UserSchema
   .path('email')
   .validate(function(value, respond) {
+    
     var self = this;
     return this.constructor.findOne({ email: value }).exec()
       .then(function(user) {
